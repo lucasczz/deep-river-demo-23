@@ -4,7 +4,9 @@ This repository contains the code to follow along with the hands-on-tutorial on 
 
 To run the provided code, we suggest creating a new Python environment using e.g. Anaconda or venv. 
 
-To do so, first navigate to the demo's directory in your terminal.
+## Setup
+
+To set up your environment, first navigate to the demo's directory in your terminal.
 
 ### Anaconda
 
@@ -34,9 +36,10 @@ To do so, first navigate to the demo's directory in your terminal.
     
         pip install -r requirements.txt
 
+## Running the Code
 
-Now open the first Jupyter Notebook file using
+Open the first Jupyter Notebook file using
 
     jupyter lab notebooks/overview.ipynb
 
-and follow along the tutorial! 
+and follow along the tutorial by clicking the highlighted links in the outline! 
