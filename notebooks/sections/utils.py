@@ -53,8 +53,8 @@ def get_taxi_data():
 
 def get_turtlebot_data():
     features = [f"angular_vel_{i}" for i in ["x", "y", "z"]]
-    data = pd.read_csv(Path(__file__).parent.joinpath("turtlebot_imu.csv"))
+    data = pd.read_csv(Path(__file__).parent.joinpath("../resources/turtlebot_imu.csv"))
     return [
-        (dict(zip(features, row[features])), row["anomaly_type"])
+        (dict(zip(features, row[features])), row["is_anomaly"])
         for _, row in data.iterrows()
     ]
