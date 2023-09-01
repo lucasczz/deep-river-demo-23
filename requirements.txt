@@ -1,0 +1,7 @@
+numpy 
+river 
+river[deep] 
+scikit-learn 
+tqdm 
+pandas
+jupyterlab
