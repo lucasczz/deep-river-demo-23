@@ -5,3 +5,4 @@ scikit-learn
 tqdm 
 pandas
 jupyterlab
+matplotlib

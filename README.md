@@ -28,7 +28,7 @@ To set up your environment, first navigate to the demo's directory in your termi
 
         source deep-river-demo/bin/activate
 
-    or on Windows
+    or on Windows using
 
         deep-river-demo/Scripts/activate
 
