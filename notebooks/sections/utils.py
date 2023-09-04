@@ -43,14 +43,6 @@ class StreamTracker:
         return self.results
 
 
-def get_taxi_data():
-    data = pd.read_csv(Path(__file__).parent.joinpath("_nyc_taxi.csv"))
-    return [
-        ({"passengers": row["value"]}, row["is_anomaly"])
-        for _, row in data.iterrows()
-    ]
-
-
 def get_turtlebot_data():
     features = [f"angular_vel_{i}" for i in ["x", "y", "z"]]
     data = pd.read_csv(Path(__file__).parent.joinpath("../resources/turtlebot_imu.csv"))
@@ -58,3 +50,23 @@ def get_turtlebot_data():
         (dict(zip(features, row[features])), row["is_anomaly"])
         for _, row in data.iterrows()
     ]
+
+
+def find_anom_subsequences(labels):
+    windows = []
+    start = None
+
+    for i, value in enumerate(labels):
+        if value == 1:
+            if start is None:
+                start = i
+        elif start is not None:
+            end = i - 1
+            windows.append((start, end))
+            start = None
+
+    # If the last window ends with a 1, add it as well
+    if start is not None:
+        windows.append((start, len(labels) - 1))
+
+    return windows
